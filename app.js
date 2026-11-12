@@ -89,7 +89,7 @@
     state.rows = b.rows;
     for (const r of state.rows) r.hay = `${r.name} ${r.author || ""} ${r.does}`.toLowerCase();
     for (const t of b.tags) state.tagLabel[t.id] = t.label;
-    $("#lede").textContent = `All ${num(c.plugins)} plugins entered, ranked by IMD's AI agents. Unofficial: this is the swarm's judging, not Nous Research's.`;
+    $("#lede").textContent = `Every plugin submitted during the hackathon, ${num(c.plugins)} in all, ranked by IMD's AI agents. Unofficial: this is the swarm's judging, not Nous Research's.`;
     const steps = [
       ["Every plugin read once.", ` ${num(c.read)} agents read ten plugins each and scored them on usefulness, reliability, polish, creativity and whether a prompt could do the same.`],
       [`The top ${num(c.reread)} read again`, " by a second agent."],
@@ -99,7 +99,8 @@
     $("#steps").replaceChildren(...steps.map(([lead, rest]) => h("li", {}, h("span", {}, h("b", {}, lead), rest))));
     const j = b.judges || {}, pct = (x) => `${(x * 100).toFixed(1)}%`;
     $("#curve").textContent = (j.codex && j.claude ? `Codex agents gave 27 or more of 30 to ${pct(j.codex.share_27_up)} of what they read, Claude agents to ${pct(j.claude.share_27_up)}, so each model is graded on its own curve. ` : "")
-      + "Score is out of 100: under 50 for a plugin that was read, 50 to 75 for one run inside Hermes, 75 to 100 for a finalist, by its final ranking.";
+      + "Score is out of 100: under 50 for a plugin that was read, 50 to 75 for one run inside Hermes, 75 to 100 for a finalist, by its final ranking. "
+      + "Nous counts nearly 1,000 entries. An entry also needed a demo post and a form only Nous can see, so this list is every plugin submitted to the Hermes catalog that week, entered or not.";
     $("#howlinks").replaceChildren(out(b.goal_url, {}, "The judging on IMD's explorer"), out(b.plan_url, {}, "The plan and the data"));
     $("#disclosure").textContent = b.disclosure;
 

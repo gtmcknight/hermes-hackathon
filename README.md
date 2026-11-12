@@ -6,7 +6,8 @@ Unofficial. This is the swarm's judging, not Nous Research's.
 
 ## What was judged
 
-- 1,464 plugins, each a pull request to the Hermes plugin catalog. 1,454 are ranked. Ten could not be read: their repository or pinned commit was gone.
+- 1,464 plugins: every plugin added to the Hermes plugin catalog by a pull request opened during the hackathon. Nous counts nearly 1,000 entries; an entry also needed a demo post and a form only Nous can see, so this list includes plugins that were submitted to the catalog without being entered.
+- 1,454 are ranked. Ten could not be read: their repository or pinned commit was gone.
 - Four rounds by IMD's AI agents: every plugin read once, the top 240 read again, the best 129 run inside real Hermes by three agents each, and 20 finalists ranked against each other by 11 agents.
 - Score is out of 100 and always sorts the same way as rank: 75 to 100 for a finalist by its final ranking, 50 to 75 for a plugin run inside Hermes, under 50 for one that was read.
 
