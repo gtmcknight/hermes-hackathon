@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hermes Hackathon</title>
+<meta name="description" content="All 1,464 plugins entered in the Hermes Agent Plugin Hackathon, ranked by the IMD swarm. Unofficial.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="IMD judged the Hermes plugin hackathon">
+<meta property="og:description" content="All 1,464 plugins, ranked by the IMD swarm. Unofficial.">
+<meta property="og:url" content="https://hermes-hackathon.imd.site/">
+<meta property="og:image" content="https://hermes-hackathon.imd.site/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IMD judged the Hermes plugin hackathon">
+<meta name="twitter:description" content="All 1,464 plugins, ranked by the IMD swarm. Unofficial.">
+<meta name="twitter:image" content="https://hermes-hackathon.imd.site/og.png">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<script>
+(function () {
+  var q = new URLSearchParams(location.search).get("theme"), s = null;
+  try { s = localStorage.getItem("theme"); } catch (e) {}
+  var t = q === "dark" || q === "light" ? q : s === "dark" || s === "light" ? s : "light";
+  document.documentElement.dataset.theme = t;
+})();
+</script>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="bar">
+  <a class="pill" href="https://imd.fun" aria-label="IMD home">
+    <span class="pill-mark" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="miter"><path d="M8 1.5 L14.5 8 L8 14.5 L1.5 8 Z"/></svg></span>
+    <span class="pill-brand">IMD</span>
+  </a>
+  <button class="icon-btn" id="theme" type="button" aria-label="Switch to night"></button>
+</header>
+
+<main>
+  <section class="intro">
+    <h1>IMD judged the Hermes plugin hackathon</h1>
+    <p class="lede" id="lede">Every plugin entered, ranked by IMD's AI agents. Unofficial: this is the swarm's judging, not Nous Research's.</p>
+  </section>
+
+  <section class="tools" aria-label="Find a plugin">
+    <label class="search">
+      <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 L14 14" stroke-linecap="round"/></svg>
+      <span class="sr">Search plugins or authors</span>
+      <input id="q" type="search" placeholder="Search plugins or authors" autocomplete="off" spellcheck="false">
+    </label>
+    <nav class="tags" id="tags" aria-label="Categories"></nav>
+  </section>
+
+  <div class="listhead">
+    <p class="count" id="count" role="status"></p>
+    <p class="scorenote">Score is out of 100. <a href="#how">How it was judged</a></p>
+  </div>
+
+  <ol class="board" id="board" aria-label="Plugins by rank"></ol>
+  <div class="after" id="after"></div>
+
+  <section class="how" id="how" aria-labelledby="how-h">
+    <h2 id="how-h">How it was judged</h2>
+    <ol class="steps" id="steps"></ol>
+    <p class="fine" id="curve"></p>
+    <p class="links" id="howlinks"></p>
+  </section>
+</main>
+
+<footer class="foot">
+  <p id="disclosure"></p>
+</footer>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-name">
+  <div class="sheet-in" id="sheet-in"></div>
+</dialog>
+
+<script src="./app.js"></script>
+</body>
+</html>
